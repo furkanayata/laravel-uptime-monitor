@@ -9,7 +9,6 @@ use Spatie\UptimeMonitor\Events\CertificateCheckFailed;
 use Spatie\UptimeMonitor\Events\CertificateExpiresSoon;
 use Spatie\UptimeMonitor\Models\Enums\CertificateStatus;
 use Spatie\UptimeMonitor\Events\CertificateCheckSucceeded;
-use Spatie\SslCertificate\Exceptions\CouldNotDownloadCertificate;
 
 trait SupportsCertificateCheck
 {
@@ -19,7 +18,7 @@ trait SupportsCertificateCheck
             $certificate = SslCertificate::createForHostName($this->url->getHost());
 
             $this->setCertificate($certificate);
-        } catch (CouldNotDownloadCertificate $exception) {
+        } catch (Exception $exception) {
             $this->setCertificateException($exception);
         }
     }
@@ -63,7 +62,7 @@ trait SupportsCertificateCheck
         if ($this->certificate_status === CertificateStatus::INVALID) {
             $reason = 'Unknown';
 
-            if ($certificate->appliesToUrl($this->url)) {
+            if (! $certificate->appliesToUrl($this->url)) {
                 $reason = "Certificate does not apply to {$this->url} but only to these domains: ".implode(',', $certificate->getAdditionalDomains());
             }
 

@@ -20,6 +20,10 @@ class Healthy
         ConsoleOutput::info('================');
 
         $rows = $healthyMonitor->map(function (Monitor $monitor) {
+            $certificateFound = '';
+            $certificateExpirationDate = '';
+            $certificateIssuer = '';
+
             $url = $monitor->url;
 
             $reachable = $monitor->uptimeStatusAsEmoji;

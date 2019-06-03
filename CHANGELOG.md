@@ -2,6 +2,34 @@
 
 All notable changes to `laravel-uptime-monitor` will be documented in this file
 
+## Unreleased
+
+## 3.5.0 - 2019-05-17
+### Added
+- Add `raw_url` attribute to serialization [#175](https://github.com/spatie/laravel-uptime-monitor/pull/175)
+
+## 3.4.1 - 2019-04-15
+### Fixed
+- Fixed issue with migrations stub ([#171](https://github.com/spatie/laravel-uptime-monitor/pull/171))
+
+## 3.4.0 - 2019-03-03
+### Changed
+* Dropped support for Laravel 5.7
+* Added support for Laravel 5.8, PHPUnit 8
+* PHPUnit minimum version is now 7.5
+
+## 3.3.4 - 2018-10-30
+
+- fix if statement to be if not certificate applies to url
+
+## 3.3.3 - 2018-10-20
+
+- fix for PHP 7.3
+
+## 3.3.2 - 2018-10-18
+
+- fix for checking SSL
+
 ## 3.3.1 - 2018-08-27
 
 - add support for Laravel 5.7
