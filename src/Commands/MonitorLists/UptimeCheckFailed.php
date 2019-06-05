@@ -20,10 +20,6 @@ class UptimeCheckFailed
         ConsoleOutput::warn('===================');
 
         $rows = $failingMonitors->map(function (Monitor $monitor) {
-            $certificateFound = '';
-            $certificateExpirationDate = '';
-            $certificateIssuer = '';
-
             $url = $monitor->url;
 
             $reachable = $monitor->uptimeStatusAsEmoji;

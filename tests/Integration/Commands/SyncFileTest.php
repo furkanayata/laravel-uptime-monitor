@@ -11,7 +11,7 @@ class SyncFileTest extends TestCase
 {
     protected $stubsDirectory = __DIR__.'/../stubs/';
 
-    public function setUp() : void
+    public function setUp()
     {
         parent::setUp();
 

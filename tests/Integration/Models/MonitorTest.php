@@ -11,7 +11,7 @@ class MonitorTest extends TestCase
     /** @var \Spatie\UptimeMonitor\Models\Monitor */
     protected $monitor;
 
-    public function setUp() : void
+    public function setUp()
     {
         parent::setUp();
 
@@ -60,14 +60,5 @@ class MonitorTest extends TestCase
 
         //it will not enable the certificate check for a non-https site.
         $this->assertFalse($this->monitor->certificate_check_enabled);
-    }
-
-    /** @test */
-    public function raw_url_is_appended_during_serialization()
-    {
-        $this->assertEquals(
-            'http://mysite.com',
-            $this->monitor->toArray()['raw_url']
-        );
     }
 }

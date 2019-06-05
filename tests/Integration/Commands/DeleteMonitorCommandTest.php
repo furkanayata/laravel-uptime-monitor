@@ -15,7 +15,7 @@ class DeleteMonitorCommandTest extends TestCase
     /** @var string */
     protected $url;
 
-    public function setUp() : void
+    public function setUp()
     {
         parent::setUp();
 
@@ -38,7 +38,7 @@ class DeleteMonitorCommandTest extends TestCase
         $this->command
             ->shouldReceive('confirm')
             ->once()
-            ->with("Are you sure you want stop monitoring {$this->url}?")
+            ->with('/Are you sure you want stop monitoring/')
             ->andReturn('yes');
 
         Artisan::call('monitor:delete', ['url' => $this->url]);

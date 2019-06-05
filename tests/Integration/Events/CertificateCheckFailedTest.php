@@ -12,7 +12,7 @@ class CertificateCheckFailedTest extends TestCase
     /** @var \Spatie\UptimeMonitor\Models\Monitor */
     protected $monitor;
 
-    public function setUp() : void
+    public function setUp()
     {
         parent::setUp();
 

@@ -12,7 +12,7 @@ class UptimeCheckSucceededTest extends TestCase
 {
     protected $monitor;
 
-    public function setUp() : void
+    public function setUp()
     {
         parent::setUp();
 
